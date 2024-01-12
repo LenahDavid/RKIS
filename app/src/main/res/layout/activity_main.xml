@@ -37,11 +37,21 @@
         android:text="Decrypt Keys" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/ShowKeys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Button"
+        android:text="Show Keys"
         android:onClick="button3Click" />
+
+    <Button
+        android:id="@+id/SendKeys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Send Keys"
+        android:onClick="button3Click" />
+
+
 
 </LinearLayout>

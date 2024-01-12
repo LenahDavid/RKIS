@@ -50,7 +50,7 @@ public class Packager extends ISOBasePackager{
             return Math.min (getLength(), len >> 3);
         }
     }
-}
+
 
     protected ISOFieldPackager fld[] = {
             /*000*/ new IFB_NUMERIC(4, "Message Type Indicator", true),
