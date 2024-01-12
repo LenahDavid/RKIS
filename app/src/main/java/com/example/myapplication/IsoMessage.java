@@ -67,6 +67,7 @@ public class IsoMessage {
                 String serialDXInfo = serialNo + "|" + publicKey;
 
                 channel.send(serialDXInfo.getBytes());
+
             }
 
 
