@@ -29,7 +29,6 @@ import com.example.myapplication.DeviceHelper;
 import org.json.JSONObject;
 
 
-
 public class IsoMessage {
 
 
@@ -65,9 +64,9 @@ public class IsoMessage {
             if (channel.isConnected()) {
                 String serialNo = getSerialNumber();
 
-                String serialNoPubKey = serialNo + "|" + publicKey;
+                String serialDXInfo = serialNo + "|" + publicKey;
 
-                channel.send(fld62.getBytes());
+                channel.send(serialDXInfo.getBytes());
             }
 
 
