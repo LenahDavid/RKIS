@@ -51,7 +51,7 @@ public class IsoMessage {
             logger.addListener((LogListener) new SimpleLogListener(System.out));
             logger.addListener(protLog);
 
-            ASCIIChannel channel = new ASCIIChannel("167.99.254.180", 32020, packager);
+            ASCIIChannel channel = new ASCIIChannel("3.6.122.107", 12809, packager);
             channel.setLogger(logger, "TestLogger");
 
             try {
@@ -63,27 +63,13 @@ public class IsoMessage {
 
 
             if (channel.isConnected()) {
-                // Get the current date and time
-                Date currentDate = new Date();
-                SimpleDateFormat dateFormat = new SimpleDateFormat("MMdd");
-                SimpleDateFormat timeFormat = new SimpleDateFormat("HHmmss");
-                String currentDateStr = dateFormat.format(currentDate);
-                String currentTimeStr = timeFormat.format(currentDate);
+                String serialNo = getSerialNumber();
 
-                isoMsg.setPackager(packager);
-//                isoMsg.setMTI("0800");
-//                isoMsg.set(3, "560000"); // Processing Code
-//                isoMsg.set(11, "123456"); // STAN
-//                isoMsg.set(12, currentTimeStr); // Time
-//                isoMsg.set(13, currentDateStr); // Date
-                isoMsg.set(62, publicKey);
-//                isoMsg.set(47, getSerialNumber());
-                isoMsg.set(47, "123456");
-//                duplicate = isoMsg;
+                String serialNoPubKey = serialNo + "|" + publicKey;
 
-
+                channel.send(fld62.getBytes());
             }
-            channel.send(isoMsg);
+
 
 
             try {
